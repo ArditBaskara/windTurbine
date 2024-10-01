@@ -1,0 +1,75 @@
+#intro-bg {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+}
+.landing-page {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.signin {
+	height: 100%;
+	width: 100%;
+	top: -10px;
+	position: relative;
+	background-image: url("../assets/landingpage.jpeg");
+	background-repeat: no-repeat; 
+    background-size: cover;       
+    background-position: center;
+	overflow: hidden;
+}
+.signin::before{
+	content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Lapisan hitam dengan opasitas */
+    backdrop-filter: blur(5px); /* Efek blur */
+    z-index: 1;
+}
+
+
+h1 {
+	margin-bottom: 2rem;
+}
+
+.google-sign-in-btn {
+	display: inline-flex;
+	align-items: center;
+	background-color: #357ae81f;
+	color: white;
+	border: white;
+	margin-top: 300px;
+	padding: 1rem 2rem;
+	font-size: 2rem;
+	border-radius: 20px;
+	cursor: pointer;
+	position: relative;
+    z-index: 2; /* Pastikan konten berada di atas lapisan blur dan gelap */
+    color: white; /* Warna teks atau elemen lainnya */
+    text-align: center; /* Sesuaikan sesuai kebutuhan */
+    padding: 20px;
+
+}
+
+.google-sign-in-btn:hover {
+	background-color: #357ae8;
+}
+.google-sign-in-btn::before {
+	content: "";
+	display: inline-block;
+	background-image: url("../assets/google.png"); /* Path ikon Google */
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}

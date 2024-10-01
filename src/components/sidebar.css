@@ -1,0 +1,89 @@
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #2f3b52;
+    color: #fff;
+    height: 100vh;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999; 
+    margin-top: 80px;/* Sidebar z-index */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+}
+
+/* Ensure button is always clickable even when sidebar is closed */
+.menu-toggle {
+    font-size: 18px;
+    color: white;
+    background-color: #2f3b52;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ensure button is above the sidebar */
+    position: fixed;
+    margin-top: 90px;
+    top: 0px; 
+    left: 10px; 
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle i {
+    display: block;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.menu {
+    margin-top: 60px; /* Add margin-top to ensure space below the toggle button */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px 0;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.menu ul li.active, .menu ul li:hover {
+    background-color: #394867;
+    padding-left: 10px;
+    border-radius: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .menu ul li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 150px;
+    }
+
+    .menu ul li {
+        font-size: 14px;
+    }
+}
